@@ -1,4 +1,5 @@
 pytest==3.1.3
 coverage==4.4.1
 pymongo==3.5.1
+numpy==1.14.5
 git+https://github.com/arenarium/battleground_core
