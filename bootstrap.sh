@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 sudo apt-get update
 sudo apt-get install -y zsh curl python3 python3-venv language-pack-en
 sudo apt-get install -y ruby ruby-dev gcc make libffi-dev

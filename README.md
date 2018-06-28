@@ -1,3 +1,5 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a9df47f65c4a4af18b08c0aff9072109)](https://www.codacy.com/app/arenarium/battleground_agent_template?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=arenarium/battleground_agent_template&amp;utm_campaign=Badge_Grade)
+
 # Agent Template
 Develop your own agents for the [Arenarium](http://www.arenarium.com/).
 This repository has several examples of agents, which, if you come from the Arenarium webpage, you can find in the `arena-game` folder. Those agent are able to play the arena game. For the basic game, look into the `basic-game` folder. For more information about
