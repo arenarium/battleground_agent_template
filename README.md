@@ -32,7 +32,7 @@ pip install --upgrade -r requirements.txt
 
 [Install Docker following instructions here](https://www.docker.com/community-edition), and start a local mongoDB container:
 ```
-docker run docker run -d mongo
+docker run -d mongo
 ```
 
 ## Running your first game
