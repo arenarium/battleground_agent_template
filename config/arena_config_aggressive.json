@@ -26,7 +26,7 @@
     {
       "game_type":["arena_game"],
       "owner":"core",
-      "name":"Agressive Walker",
+      "name":"Agressive Attacker",
       "local_path":"arena_game.aggressive_attacker",
       "class_name":"ArenaAgent",
       "remote_path":null,

@@ -28,14 +28,16 @@ Clone or [download](https://github.com/arenarium/battleground_agent_template/arc
 
 #### 2. Setting up
 
-##### 2.1 Using Vagrant (recommended)
-Even if you are not already familiar with Vagrant, this is probably the easiest way to go.
-Make sure you follow all the [installation instructions for vagrant.](https://www.vagrantup.com/docs/installation/)
+##### 2.1 Using Vagrant
+Even if you are already familiar with Vagrant, this is probably the easiest way to go.
+Make sure you follow all the [installation instructions for vagrant.](https://www.vagrantup.com/docs/installation/) You may need to download the ubuntu box.
+
+In your terminal/command window, navigate to the folder that contains the vagrant file in this repo.
 Then run
 ```
 vagrant up
 ```
-in the folder that contains the Vagantfile supplied in this repo, using the console. 
+
 This automatically installs all necessary components (battleground package, docker, etc.) for the environment to run.  
 
 You can then connect to your virtual machine using
@@ -58,7 +60,7 @@ pip install --upgrade -r requirements.txt
 **optional:**
 [Install Docker, following instructions here](https://www.docker.com/community-edition), and start a local mongoDB container:
 ```
-docker run -d mongo
+docker run -d -p 27017:27017 mongo
 ```
 
 
@@ -67,10 +69,10 @@ docker run -d mongo
 Ok, now we're ready to play!
 
 You can configure a lot about the game you want to play and which agents are playing. For now, we'll use the `example_config.json` file to determine what game configuration you will play.
-The basic game, which is provided as an example, is just a number guessing game. 
-It instantiates four players: one from the battleground core component, two from my_agent 
-in the basic_agent folder, and one from my_persistent_agent in the same folder. 
-In contrast to my_agent, the persistent agent has access to a memory, which is stored 
+The basic game, which is provided as an example, is just a number guessing game.
+It instantiates four players: one from the battleground core component, two from my_agent
+in the basic_agent folder, and one from my_persistent_agent in the same folder.
+In contrast to my_agent, the persistent agent has access to a memory, which is stored
 in a local mongoDB. Accessing it, the agent continuously tries to improve the guess for the next move.
 
 Then run the game server (if you configured mongoDB, you can omit the `--no_save` flag):
@@ -108,13 +110,13 @@ The game we've played so far is just a simple random number guessing game. It's 
 ### Playing an Arena Game
 
 This is where things get interesting!
-As a second example, there is an `arena_config.json` file which plays four arena games with 
-a similar agent composition as above. The core agents take random moves by default. 
+As a second example, there is an `arena_config.json` file which plays four arena games with
+a similar agent composition as above. The core agents take random moves by default.
 
-The whole game is designed to be very modular and allows for many mods to be included. If you want to include more or other mods, check out the 
-[battleground.games.arena.mods](https://github.com/arenarium/battleground/tree/master/battleground/games/arena/mods) 
+The whole game is designed to be very modular and allows for many mods to be included. If you want to include more or other mods, check out the
+[battleground.games.arena.mods](https://github.com/arenarium/battleground/tree/master/battleground/games/arena/mods)
 folder to see what is available, and append your choice to the list of mod_paths in the `arena_config.json`  file.
-There is an interesting 'boosts' mod, which introduces the option for the agent use spirit points (aka mana) to boost 
+There is an interesting 'boosts' mod, which introduces the option for the agent use spirit points (aka mana) to boost
 certain stats of the gladiator it is playing.
 
 To start the game server, we run
@@ -148,7 +150,7 @@ Random Walker: 0.0000
 Attacker: 0.3000
 ```
 
-The score is 1 for each other gladiator killed, but 
+The score is 1 for each other gladiator killed, but
 set to 0 if your gladiator dies.
 
 See if you can change the `arena_game/my_arena_agent.py` file to increase your win rate.
