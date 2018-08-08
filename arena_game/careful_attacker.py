@@ -6,7 +6,7 @@ class ArenaAgent(Agent):
 
     def move(self, state):
         """
-        Attack nearest other or move towards nearest other.
+        Attack if healthier that others, run otherwise.
         """
 
         others_health = building_blocks.others_hitpoints(state)
